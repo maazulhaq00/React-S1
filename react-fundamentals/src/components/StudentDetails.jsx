@@ -1,12 +1,17 @@
 function StudentDetails(props) {
+
+    const {details} = props
+
+    const {name, age, batch, phone, email} = details
+
     return (
         <>
         <div>
-            <h1>Name: {props.name}</h1>
-            <p>Age: {props.age}</p>
-            <p>Batch Code: {props.batch}</p>
-            <p>Phone: {props.phone}</p>
-            <p>Email: {props.email}</p>
+            <h1>Name: {name}</h1>
+            <p>Age: {age}</p>
+            <p>Batch Code: {batch}</p>
+            <p>Phone: {phone}</p>
+            <p>Email: {email}</p>
         </div>
         </>
         );
