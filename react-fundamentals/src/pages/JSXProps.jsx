@@ -1,4 +1,4 @@
-import Card from "../components/Card";
+import Card from "../components/Card/Card";
 
 function JSXProps() {
     return (
@@ -12,7 +12,6 @@ function JSXProps() {
                     </div>
                 }
             />
-
             <Card
                 name="Muhammad Hasnain"
                 fields={
@@ -39,7 +38,6 @@ function JSXProps() {
                     </table>
                 }
             />
-
             <Card
                 name="Umer Mansoor"
                 fields={<p>Only a para as JSX prop "field"</p>}

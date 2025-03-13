@@ -1,3 +1,5 @@
+import './StudentDetails.css'
+
 function StudentDetails(props) {
 
     const {details} = props
@@ -6,8 +8,8 @@ function StudentDetails(props) {
 
     return (
         <>
-        <div>
-            <h1>Name: {name}</h1>
+        <div className='details-comp'>
+            <h1 className="color-warning">Name: {name}</h1>
             <p>Age: {age}</p>
             <p>Batch Code: {batch}</p>
             <p>Phone: {phone}</p>

@@ -1,4 +1,4 @@
-import StudentDetails from "../components/StudentDetails";
+import StudentDetails from "../components/StudentDetails/StudentDetails";
 
 function Home() {
     
