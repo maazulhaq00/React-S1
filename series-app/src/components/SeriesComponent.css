@@ -1,3 +1,7 @@
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 .series-container{
     margin: 80px 40px;
     display: flex;
@@ -10,10 +14,39 @@
     width: 30%;
     box-shadow: 6px 6px 10px 4px gray;
 }
+
 .series-container > div > img {
     width: 100%;
     height: 40%;
 }
+
 .series-container > div > .card-content {
     padding: 0px 20px;
+}
+
+.series-container > div > .card-content .tag{
+    padding: 3px 8px;
+    margin: 0px 3px;
+    border-radius: 15px;
+    background-color: rgb(231, 231, 231);
+}
+
+.series-container > div > .card-content button{
+    padding: 7px;
+    border: none;
+    background-color: rgb(0, 0, 104);
+    color: white;
+}
+
+.rating {
+    padding: 3px 8px;
+    margin: 0px 3px;
+    border-radius: 15px;
+}
+
+.popular {
+    background-color: rgb(178, 240, 178);
+}
+.average {
+    background-color: rgb(255, 241, 177);
 }
