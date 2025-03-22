@@ -9,8 +9,8 @@ function App() {
     <>
       {/* <Home /> */}
       {/* <JSXProps /> */}
-      <EventHandling />
-
+      {/* <EventHandling /> */}
+      <Counter />
     </>
    );
 }
