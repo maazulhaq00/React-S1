@@ -3,6 +3,7 @@ import JSXProps from "./pages/JSXProps";
 import './App.css'
 import EventHandling from "./pages/EventHandling";
 import Counter from "./pages/Counter";
+import Post from "./components/Post/Post";
 
 function App() {
   return ( 
@@ -10,7 +11,11 @@ function App() {
       {/* <Home /> */}
       {/* <JSXProps /> */}
       {/* <EventHandling /> */}
-      <Counter />
+      {/* <Counter /> */}
+
+      <Post />
+
+      
     </>
    );
 }

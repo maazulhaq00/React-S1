@@ -1,4 +1,4 @@
-function dataCardComponent({ data }) {
+function CardComponent({ data }) {
     return (
         <div>
             <img src={data.img_url} alt={data.name} />
@@ -26,6 +26,6 @@ function dataCardComponent({ data }) {
     );
 }
 
-export default dataCardComponent;
+export default CardComponent;
 
 // {data.rating >= 8.5 ? 'popular' : 'average'}
