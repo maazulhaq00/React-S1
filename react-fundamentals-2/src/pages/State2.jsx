@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 function State2() {
-
     // let b1 = ["Sarah",  "Ali"];
     // let b2 = ["Ahmed", "Khalid"];
 
