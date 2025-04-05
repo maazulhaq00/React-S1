@@ -17,13 +17,14 @@ function TodoPage() {
 
         if (task == "") return;
 
-        if (tasksArr.includes(task)) {
-            setTask("");
+        if (tasksArr.find((taskItem) => taskItem.taskName == task )) {
             return
         }
 
+        // console.log(tasksArr.find((taskItem) => taskItem.taskName == task ));
+        
+
         setTasksArr([...tasksArr, { taskName: task, isDone: false }])
-        setTask("")
 
     }
 

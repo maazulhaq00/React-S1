@@ -10,7 +10,10 @@ function TodoForm({handleAddButtonClick}) {
 
     return (<div>
         <input type="text" placeholder="Enter task to add" value={task} onChange={handleInputChange} />
-        <button onClick={() => handleAddButtonClick(task)}>Add Task</button>
+        <button onClick={() => {
+            handleAddButtonClick(task)
+            setTask("")
+            }}>Add Task</button>
     </div>);
 }
 
