@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaCheck } from "react-icons/fa6";
-import { MdDeleteOutline } from "react-icons/md";
+import { MdDeleteOutline, MdOutlineCheckBox, MdOutlineCheckBoxOutlineBlank } from "react-icons/md";
 
 
 function TodoPage() {
@@ -27,25 +27,46 @@ function TodoPage() {
             return
         }
 
-        setTasksArr([...tasksArr, {taskName: task, isDone: false}])
+        setTasksArr([...tasksArr, { taskName: task, isDone: false }])
         setTask("")
 
     }
 
-    function handleDeleteBtnClick(task){
+    function handleDeleteBtnClick(task) {
         // console.log(task);
         // console.log(tasksArr);
 
         let updatedTaskArr = tasksArr.filter((taskItem) => taskItem.taskName != task)
-        
+
         setTasksArr(updatedTaskArr)
-        
+
         // console.log(updatedTaskArr);
-        
-        
+
+
     }
 
-    function handleClearAllBtnClick(){
+    function handleCheckBtnClick(task) {
+
+        let updatedTaskArr = tasksArr.map((taskItem) => {
+
+            if (taskItem.taskName == task) {
+                return {
+                    ...taskItem,
+                    isDone: !taskItem.isDone
+                }
+            }
+            else {
+                return taskItem
+            }
+
+        })
+
+        setTasksArr(updatedTaskArr)
+
+
+    }
+
+    function handleClearAllBtnClick() {
         setTasksArr([]);
     }
 
@@ -58,9 +79,16 @@ function TodoPage() {
             <ul>
                 {
                     tasksArr.map((task, index) => <li key={index}>
-                        {task.taskName}
-                        <button>
-                            <FaCheck />
+                        <span style={{ textDecoration: task.isDone ? 'line-through' : 'none' }} >
+                            {task.taskName}
+                        </span>
+                        <button onClick={() => handleCheckBtnClick(task.taskName)}>
+                            {
+                                task.isDone ?
+                                    <MdOutlineCheckBox /> :
+                                    <MdOutlineCheckBoxOutlineBlank />
+
+                            }
                         </button>
                         <button onClick={() => handleDeleteBtnClick(task.taskName)}>
                             <MdDeleteOutline />
@@ -74,7 +102,7 @@ function TodoPage() {
                 tasksArr.length > 0 ? <button onClick={handleClearAllBtnClick}>Clear All</button> : ""
             }
 
-            
+
         </>
     );
 }

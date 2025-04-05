@@ -45,6 +45,9 @@ function State4() {
         console.log(contactForm);
     }
     
+    // console.log("Rendering");
+    
+    
 
 
     return (
