@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaCheck } from "react-icons/fa6";
 import { MdDeleteOutline, MdOutlineCheckBox, MdOutlineCheckBoxOutlineBlank } from "react-icons/md";
+import TodoForm from "../components/TodoForm";
 
 
 function TodoPage() {
@@ -9,16 +10,10 @@ function TodoPage() {
 
     // let b3 = [...b1, ...b2, "Hammad"]
 
-    const [task, setTask] = useState("")
 
     const [tasksArr, setTasksArr] = useState([]);
 
-    function handleInputChange(e) {
-
-        setTask(e.target.value)
-    }
-
-    function handleAddButtonClick() {
+    function handleAddButtonClick(task) {
 
         if (task == "") return;
 
@@ -72,9 +67,7 @@ function TodoPage() {
 
     return (
         <>
-            <input type="text" placeholder="Enter task to add" value={task} onChange={handleInputChange} />
-
-            <button onClick={handleAddButtonClick}>Add Task</button>
+            <TodoForm handleAddButtonClick={handleAddButtonClick}  />
 
             <ul>
                 {
