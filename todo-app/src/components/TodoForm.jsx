@@ -4,7 +4,6 @@ function TodoForm({handleAddButtonClick}) {
     const [task, setTask] = useState("")
 
     function handleInputChange(e) {
-
         setTask(e.target.value)
     }
 

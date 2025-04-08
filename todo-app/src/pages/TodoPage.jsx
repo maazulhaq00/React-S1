@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { FaCheck } from "react-icons/fa6";
-import { MdDeleteOutline, MdOutlineCheckBox, MdOutlineCheckBoxOutlineBlank } from "react-icons/md";
 import TodoForm from "../components/TodoForm";
+import TodoListItem from "../components/TodoListItem";
 
 
 function TodoPage() {
@@ -10,8 +9,15 @@ function TodoPage() {
 
     // let b3 = [...b1, ...b2, "Hammad"]
 
-
-    const [tasksArr, setTasksArr] = useState([]);
+    const [tasksArr, setTasksArr] = useState(() => {
+        let taskData = JSON.parse(localStorage.getItem("TodoArr"))
+        if(!taskData) {
+            return [];
+        }
+        else{
+            return taskData
+        }
+    });
 
     function handleAddButtonClick(task) {
 
@@ -27,6 +33,10 @@ function TodoPage() {
         setTasksArr([...tasksArr, { taskName: task, isDone: false }])
 
     }
+
+    // console.log("TODO PAGE RENDERED AGAIN");
+    localStorage.setItem("TodoArr", JSON.stringify(tasksArr))
+    
 
     function handleDeleteBtnClick(task) {
         // console.log(task);
@@ -72,23 +82,7 @@ function TodoPage() {
 
             <ul>
                 {
-                    tasksArr.map((task, index) => <li key={index}>
-                        <span style={{ textDecoration: task.isDone ? 'line-through' : 'none' }} >
-                            {task.taskName}
-                        </span>
-                        <button onClick={() => handleCheckBtnClick(task.taskName)}>
-                            {
-                                task.isDone ?
-                                    <MdOutlineCheckBox /> :
-                                    <MdOutlineCheckBoxOutlineBlank />
-
-                            }
-                        </button>
-                        <button onClick={() => handleDeleteBtnClick(task.taskName)}>
-                            <MdDeleteOutline />
-                        </button>
-
-                    </li>)
+                    tasksArr.map((task, index) => <TodoListItem key={index} task={task} handleDeleteBtnClick={handleDeleteBtnClick} handleCheckBtnClick={handleCheckBtnClick} /> )
                 }
             </ul>
 
