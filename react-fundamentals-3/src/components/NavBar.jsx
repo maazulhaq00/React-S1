@@ -40,6 +40,11 @@ function NavBar() {
                                 Login
                             </NavLink>
                         </li>
+                        <li className="nav-item">
+                            <NavLink className={({isActive}) => isActive ? "nav-link active" : "nav-link" } to="/mui">
+                                MUI
+                            </NavLink>
+                        </li>
                     </ul>
                 </div>
             </div>

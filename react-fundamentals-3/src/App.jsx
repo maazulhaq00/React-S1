@@ -9,6 +9,8 @@ import NotFound from './pages/NotFound';
 import Contact from './pages/Contact';
 import Login from './pages/Login';
 import Welcome from './pages/Welcome';
+import MUI from './pages/MUI';
+import DrawerAppBar from './components/ResponsiveAppBar';
 
 
 
@@ -17,7 +19,8 @@ import Welcome from './pages/Welcome';
 function App() {
   return (<>
     <Router>
-      <NavBar />
+      {/* <NavBar /> */}
+      <DrawerAppBar />
       <Routes>
         {/* <Route path='/' element={<h1>Hello</h1>} /> */}
         <Route path='/' element={<Home />} />
@@ -25,6 +28,7 @@ function App() {
         <Route path='/contact' element={<Contact />} />
 
         <Route path='/login' element={<Login />} />
+        <Route path='/mui' element={<MUI />} />
         <Route path='/welcome/:username' element={<Welcome />} />
 
         <Route path='*' element={<NotFound />} />
